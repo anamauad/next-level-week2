@@ -5,7 +5,7 @@ import "./assets/styles/global.css";
 function App() {
   return (
     <div className="App">
-      <h1>oi</h1>
+      <h1>Texto do App</h1>
     </div>
   );
 }

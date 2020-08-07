@@ -1,23 +1,30 @@
 # Next Level Week 2 - RocketSeat
 
 ## Dia 1
+
 Criar projeto Proffy usando o modelo **mobile first**, em que é construído primeiramente para acesso através de celulares, para então adequar a visualização quando acessado por dispositivos com telas maiores, como por exemplo computadores e tablets.
 
 ### Ambiente de desenvolvimento
+
 - SO: Windows 10 + Ubuntu App
 - IDE: Visual Studio Code
 - layout: figma.com
-   - arquivos [Proffy_Mobile](Proffy_Mobile.fig) e [Proffy_Web](Proffy_Web.fig)
+  - arquivos [Proffy_Mobile](Proffy_Mobile.fig) e [Proffy_Web](Proffy_Web.fig)
 
 ### Criar o projeto react
+
 ```
 [] yarn create react-app web --template typescript
 ```
+
 ou
+
 ```
 [] npx create-react-app web --template typescript
 ```
+
 inicia a criação do projeto:
+
 ```
 Creating a new React app in /mnt/c/git/next-level-week2/web.
 
@@ -49,3 +56,19 @@ We suggest that you begin by typing:
 
 Happy hacking!
 ```
+
+### Adicionar fontes do Google
+
+Adicionar a partir de fonts.google.com:
+
+- Archivo regular e bold
+- Poppins regular
+
+Passos:
+
+1. Abrir fonts.google.com
+1. Buscar pela fonte, e selecionar os estilos selecionados
+1. Visualizar as famílias de fonte selecionadas
+1. _Embed_
+1. Copiar a tag _link_
+1. Usar no CSS

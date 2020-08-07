@@ -1,4 +1,6 @@
 :root {
+  /* define o tamanho pra tudo. permite maior acessibilidade.
+  Tamanho padrão é 16px. 100% = 16px. */
   font-size: 60%;
 
   --color-background: #f0f0f7;
@@ -34,4 +36,33 @@ body,
 
 body {
   background-color: var(--color-background);
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* font-family: 'Archivo', sans-serif; */
+/* font-family: 'Poppins', sans-serif; */
+
+body,
+input,
+button,
+textarea {
+  /* a definição de tamanho rem quer dizer que o tamano da fonte rem = tamanho x font-size. */
+  font: 500 1.6rem Poppins;
+}
+
+.container {
+  width: 90vw;
+  max-width: 700px;
+}
+
+@media (min-width: 700px) {
+  :root {
+    /* lembrando: rem = tamanho * font-size */
+    font-size: 62.5%;
+  }
 }
