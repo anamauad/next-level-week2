@@ -158,3 +158,10 @@ Após criar os arquivos para criar as tabelas na base de dados (migrations), exe
 [API](../server/API.MD)
 
 ## Dia 2: Finalizando o front-end
+
+### Finalizar páginas
+
+- Ensinar => cadastro de professor: teacher form
+- Componentes:
+  - Input
+  - TextArea
