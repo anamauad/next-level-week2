@@ -155,7 +155,7 @@ Após criar os arquivos para criar as tabelas na base de dados (migrations), exe
 
 ### Criar as rotas
 
-[API](../server/API.MD)
+[API](../server/API.md)
 
 ## Dia 2: Finalizando o front-end
 
