@@ -86,10 +86,15 @@ export default class ClassesController {
       await transaction.commit();
       return response.status(201).json({ teacher_id, class_id, schedule_ids });
     } catch (error) {
+      console.error(error);
+
       await transaction.rollback();
       return response
         .status(400)
-        .json({ error: "Unexpected error while creating new class" });
+        .json({
+          error: "Unexpected error while creating new class",
+          data: { name, avatar, whatsapp, bio, subject, cost, schedule },
+        });
     }
   }
 }
