@@ -40,3 +40,22 @@
   right: 1.6rem;
   bottom: 0;
 }
+
+@media (min-width: 700px) {
+  #page-teacher-list {
+    max-width: 100%;
+  }
+
+  #search-teachers {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 16px;
+    position: absolute;
+    bottom: -24px;
+  }
+
+  #search-teachers .input-block + .input-block {
+    margin-top: 0;
+  }
+}
