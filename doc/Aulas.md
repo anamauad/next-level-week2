@@ -13,15 +13,11 @@ Criar projeto Proffy usando o modelo **mobile first**, em que é construído pri
 
 ### Criar o projeto react
 
-```
-[] yarn create react-app web --template typescript
-```
+`yarn create react-app web --template typescript`
 
 ou
 
-```
-[] npx create-react-app web --template typescript
-```
+`[] npx create-react-app web --template typescript`
 
 inicia a criação do projeto:
 
@@ -72,3 +68,19 @@ Passos:
 1. _Embed_
 1. Copiar a tag _link_
 1. Usar no CSS
+
+### Adicionar pacote para navegar entre as páginas
+
+`yarn add react-router-dom`
+
+Instalar dependência somente para desenvolvimento:
+
+`yarn add @types/react-router-dom -D`
+
+Este pacote navega entre as páginas baseado no endereço.
+
+### Criar páginas
+
+- página inicial: landing page
+- Estudar => lista de professores: teacher list
+- Ensinar => cadastro de professor: teacher form
