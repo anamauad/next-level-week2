@@ -166,3 +166,9 @@ Após criar os arquivos para criar as tabelas na base de dados (migrations), exe
   - Input
   - TextArea
   - Select
+
+### Conectar com o back-end
+
+```
+yarn add axios
+```
