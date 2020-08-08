@@ -50,6 +50,7 @@ button,
 textarea {
   /* a definição de tamanho rem quer dizer que o tamano da fonte rem = tamanho x font-size. */
   font: 500 1.6rem Poppins;
+  color: var(--color-text-base);
 }
 
 .container {
