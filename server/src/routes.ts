@@ -14,35 +14,47 @@ interface ScheduleItem {
 routes.post("/classes", async (request, response) => {
   const { name, avatar, whatsapp, bio, subject, cost, schedule } = request.body;
 
-  const insertedTeacherIds = await db("teachers").insert({
-    name,
-    avatar,
-    whatsapp,
-    bio,
-  });
+  const transaction = await db.transaction();
 
-  const teacher_id = insertedTeacherIds[0];
+  try {
+    const insertedTeacherIds = await transaction("teachers").insert({
+      name,
+      avatar,
+      whatsapp,
+      bio,
+    });
 
-  const insertedClassIds = await db("classes").insert({
-    subject,
-    cost,
-    teacher_id,
-  });
+    const teacher_id = insertedTeacherIds[0];
 
-  const class_id = insertedClassIds[0];
+    const insertedClassIds = await transaction("classes").insert({
+      subject,
+      cost,
+      teacher_id,
+    });
 
-  const classSchedule = schedule.map((scheduleItem: ScheduleItem) => {
-    return {
-      week_day: scheduleItem.week_day,
-      from: convertHoursToMinutes(scheduleItem.from),
-      to: convertHoursToMinutes(scheduleItem.to),
-      class_id,
-    };
-  });
+    const class_id = insertedClassIds[0];
 
-  await db("class_schedule").insert(classSchedule);
+    const classSchedule = schedule.map((scheduleItem: ScheduleItem) => {
+      return {
+        week_day: scheduleItem.week_day,
+        from: convertHoursToMinutes(scheduleItem.from),
+        to: convertHoursToMinutes(scheduleItem.to),
+        class_id,
+      };
+    });
 
-  return response.json({ action: "post classes", data: request.body });
+    const schedule_ids = await transaction("class_schedule").insert(
+      classSchedule
+    );
+
+    await transaction.commit();
+    return response.status(201).json({ teacher_id, class_id, schedule_ids });
+  } catch (error) {
+    await transaction.rollback();
+    return response
+      .status(400)
+      .json({ error: "Unexpected error while creating new class" });
+  }
 });
 
 // routes.get("/teachers", (request, response) => {
