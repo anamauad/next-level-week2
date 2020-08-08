@@ -1,6 +1,8 @@
 # API
 
-Esta API lista os comandos do backend do Proffy
+Este documento lista os comandos do backend do Proffy.
+
+O backend executa na porta 3101.
 
 ## Aulas
 

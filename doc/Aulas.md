@@ -94,6 +94,7 @@ Criar o projeto do servidor com:
 - reinicia o servidor automaticamente após alterações no código (ts-node-dev)
 - banco de dados relacional (sqlite3)
 - construtor de consultas SQL no formato javascript (knex)
+- permitir que aplicações em endereços diferentes acessem esta API (cors)
 
 ```
 mkdir server
@@ -105,6 +106,8 @@ yarn add ts-node-dev -D
 yarn add express
 yarn add @types/express -D
 yarn add knex sqlite3
+yarn add cors
+yarn add @types/cors -D
 ```
 
 Alterar a versão alvo javascript do typescript para a versão que o NodeJS entende (es2017).
