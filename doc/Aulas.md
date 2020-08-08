@@ -19,7 +19,7 @@ ou
 
 `[] npx create-react-app web --template typescript`
 
-inicia a criação do projeto:
+inicia a criação do projeto, gerando o log no terminal:
 
 ```
 Creating a new React app in /mnt/c/git/next-level-week2/web.
@@ -110,25 +110,38 @@ yarn add knex sqlite3
 Alterar a versão alvo javascript do typescript para a versão que o NodeJS entende (es2017).
 
 Adicionar script para rodar o servidor conforme desejado:
+
 `"start": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts"`
 
+### Base de dados
+
 Adicionar script para criar o esquema na base de dados:
+
 `"knex:migrate": "knex --knexfile knexfile.ts migrate:latest"`
 
 Adicionar script para desfazer as alterações na base de dados:
+
 `"knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback"`
 
 Adicionar a extensão _Sqlite_ no VSCode para poder acessar a base de dados para poder verificar as ações executadas durante o desenvolvimento.
 
 Clique com o botão direito no arquivo _database.sqlite_ e escolha _Open database_. Será aberto no VSCode Explorer a seção _SQLITE EXPLORER_.
 
-Caso ocorra o problema _"Failed to open database: Database failed to open: SQLite process failed to start. The argument 'file' cannot be empty. Received."_:
-
-1.  Adicione nas configurações JSON do VSCode a linha
-    `"sqlite.logLevel": "DEBUG"`
-1.  Anote o caminho do arquivo (exemplo: `/home/.../sqlite-v3.26.0-linux-x64`)
-1.  Abra o terminal e adicione permissão para execução deste arquivo através do o comando
-    `chmod +x <caminho completo do arquivo>`
+> Caso ocorra o problema _"Failed to open database: Database failed to open: SQLite process failed to start. The argument 'file' cannot be empty. Received."_:
+>
+> 1.  Adicione nas configurações JSON do VSCode a linha
+>
+>     `"sqlite.logLevel": "DEBUG"`
+>
+> 1.  Anote o caminho do arquivo (exemplo: `/home/.../sqlite-v3.26.0-linux-x64`)
+> 1.  Abra o terminal e adicione permissão para execução deste arquivo através do o comando
+>
+>     `chmod +x <caminho completo do arquivo>`
 
 Após criar os arquivos para criar as tabelas na base de dados (migrations), executar:
+
 `yarn knex:migrate`
+
+### Criar as rotas
+
+[API](../server/API.MD)
