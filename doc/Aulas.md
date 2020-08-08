@@ -1,6 +1,6 @@
 # Next Level Week 2 - RocketSeat
 
-## Dia 1
+## Dia 1: Front-end
 
 Criar projeto Proffy usando o modelo **mobile first**, em que é construído primeiramente para acesso através de celulares, para então adequar a visualização quando acessado por dispositivos com telas maiores, como por exemplo computadores e tablets.
 
@@ -84,3 +84,22 @@ Este pacote navega entre as páginas baseado no endereço.
 - página inicial: landing page
 - Estudar => lista de professores: teacher list
 - Ensinar => cadastro de professor: teacher form
+
+## Dia 2: Back-end
+
+Criar o projeto do servidor com:
+
+- typescript
+- configurações typescript (tsc)
+- reinicia o servidor automaticamente após alterações no código (ts-node-dev)
+
+```
+mkdir server
+cd server
+yarn init -y
+yarn add typescript -D
+yarn tsc --init
+yarn add ts-node-dev -D
+```
+
+Alterar a versão alvo javascript do typescript para a versão que o NodeJS entende (es2017).
