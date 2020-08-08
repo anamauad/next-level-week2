@@ -1,5 +1,13 @@
 # Next Level Week 2 - RocketSeat
 
+Criação do projeto _Proffy_ que permite o cadastro de aulas.
+
+Evolução dos dias:
+
+1. Desenvolvimento do front-end
+1. Desenvolvimento do back-end
+1. Finalizando o front-end, conectado ao back-end
+
 ## Dia 1: Front-end
 
 Criar projeto _Proffy_ usando o modelo **mobile first**, em que é construído primeiramente para acesso através de celulares, para então adequar a visualização quando acessado por dispositivos com telas maiores, como por exemplo computadores e tablets.
@@ -148,3 +156,5 @@ Após criar os arquivos para criar as tabelas na base de dados (migrations), exe
 ### Criar as rotas
 
 [API](../server/API.MD)
+
+## Dia 2: Finalizando o front-end
