@@ -169,6 +169,10 @@ Após criar os arquivos para criar as tabelas na base de dados (migrations), exe
 
 ### Conectar com o back-end
 
+- cliente REST (axios)
+- useState
+- useHistory
+
 ```
 yarn add axios
 ```

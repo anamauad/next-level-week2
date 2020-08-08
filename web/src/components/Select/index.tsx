@@ -1,8 +1,8 @@
-import React, { OptionHTMLAttributes } from "react";
+import React, { SelectHTMLAttributes } from "react";
 
 import "./styles.css";
 
-interface SelectProps extends OptionHTMLAttributes<HTMLSelectElement> {
+interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   label: string;
   id: string;
   options: Array<{
@@ -15,7 +15,7 @@ const Select: React.FC<SelectProps> = ({ label, id, options, ...rest }) => {
   return (
     <div className="select-block">
       <label htmlFor={id}>{label}</label>
-      <select name={id} id={id} defaultValue="" {...rest}>
+      <select name={id} id={id} {...rest}>
         <option value="" disabled hidden>
           Selecione uma opção
         </option>

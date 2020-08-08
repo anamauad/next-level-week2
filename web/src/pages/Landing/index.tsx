@@ -45,7 +45,7 @@ function Landing() {
 
         <span className="total-connections">
           Total de {totalConnections}{" "}
-          {totalConnections == 1
+          {totalConnections === 1
             ? "conexão já realizada"
             : "conexões já realizadas"}
           <img src={purpleHeart} alt="Coração roxo" />
