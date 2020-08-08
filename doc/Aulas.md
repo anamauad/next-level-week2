@@ -165,3 +165,4 @@ Após criar os arquivos para criar as tabelas na base de dados (migrations), exe
 - Componentes:
   - Input
   - TextArea
+  - Select

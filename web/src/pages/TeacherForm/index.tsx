@@ -3,6 +3,7 @@ import PageHeader from "../../components/PageHeader";
 import Input from "../../components/Input";
 import warningIcon from "../../assets/images/icons/warning.svg";
 import Textarea from "../../components/Textarea";
+import Select from "../../components/Select";
 
 import "./styles.css";
 
@@ -25,7 +26,20 @@ function TeacherForm() {
 
         <fieldset>
           <legend>Sobre a aula</legend>
-          <Input id="subject" label="Disciplina" />
+          <Select
+            id="subject"
+            label="Disciplina"
+            options={[
+              { value: "Artes", label: "Artes" },
+              {
+                value: "Conexão de equipamentos eletrônicos",
+                label: "Conexão de equipamentos eletrônicos",
+              },
+              { value: "Costura", label: "Costura" },
+              { value: "Matemática", label: "Matemática" },
+              { value: "Lógica", label: "Lógica" },
+            ]}
+          />
           <Input id="cost" label="Custo da sua aula por hora" />
         </fieldset>
 
