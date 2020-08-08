@@ -100,6 +100,11 @@ yarn init -y
 yarn add typescript -D
 yarn tsc --init
 yarn add ts-node-dev -D
+yarn add express
+yarn add @types/express -D
 ```
 
 Alterar a versão alvo javascript do typescript para a versão que o NodeJS entende (es2017).
+
+Adicionar script para rodar o servidor conforme desejado:
+`"start": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts"`
