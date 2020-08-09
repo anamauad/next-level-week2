@@ -1,18 +1,17 @@
 import React from "react";
-
 import { View, ImageBackground, Text } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
+
+import styles from "./styles";
 
 import teachBgImage from "../../assets/images/give-classes-background.png";
 
-import styles from "./styles";
-import { useNavigation } from "@react-navigation/native";
-
 function Teach() {
-  const { navigate } = useNavigation();
+  const { goBack } = useNavigation();
 
-  function goBackToLandingPage() {
-    navigate("Landing");
+  function handleNavigateBack() {
+    goBack();
   }
 
   return (
@@ -29,7 +28,7 @@ function Teach() {
         </Text>
       </ImageBackground>
 
-      <RectButton onPress={goBackToLandingPage} style={styles.okButton}>
+      <RectButton onPress={handleNavigateBack} style={styles.okButton}>
         <Text style={styles.okButtonText}>Tudo bem</Text>
       </RectButton>
     </View>
