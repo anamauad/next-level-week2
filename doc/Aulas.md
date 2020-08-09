@@ -291,3 +291,10 @@ yarn add axios
 ```
 expo install @react-native-community/async-storage
 ```
+
+- carga dos favoritos cada vez que a tela de favoritos é aberta
+
+> Como o useEffect é chamado somente quando a tela é carregada pela primeira vez,
+> o tab navigator não carrega a tela novamente.
+> Então para carregar a lista de novo, deve ser usado o useFocusEffect, mas
+> mas com cuidado para não causar loop, usando o React.useCallback.
