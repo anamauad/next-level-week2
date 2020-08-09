@@ -7,14 +7,17 @@ Evolução dos dias:
 1. Desenvolvimento do front-end
 1. Desenvolvimento do back-end
 1. Finalizando o front-end, conectado ao back-end
+1. Desenvolvimento do mobile
+1. Finalizadno o mobile, conectado ao back-end
 
 ## Dia 1: Front-end
 
-Criar projeto _Proffy_ usando o modelo **mobile first**, em que é construído primeiramente para acesso através de celulares, para então adequar a visualização quando acessado por dispositivos com telas maiores, como por exemplo computadores e tablets.
+Criar o projeto front-end _Proffy_ usando o modelo **mobile first**, em que é construído primeiramente para acesso através de celulares, para então adequar a visualização quando acessado por dispositivos com telas maiores, como por exemplo computadores e tablets.
 
 ### Ambiente de desenvolvimento
 
 - SO: Windows 10 + Ubuntu App
+  - todos os comandos yarn e install devem ser feitos pelo Ubuntu
 - IDE: Visual Studio Code
 - layout: figma.com
   - arquivos [Proffy_Mobile](Proffy_Mobile.fig) e [Proffy_Web](Proffy_Web.fig)
@@ -108,13 +111,21 @@ Criar o projeto do servidor com:
 mkdir server
 cd server
 yarn init -y
+
 yarn add typescript -D
+
 yarn tsc --init
+
 yarn add ts-node-dev -D
+
 yarn add express
+
 yarn add @types/express -D
+
 yarn add knex sqlite3
+
 yarn add cors
+
 yarn add @types/cors -D
 ```
 
@@ -178,3 +189,111 @@ Após criar os arquivos para criar as tabelas na base de dados (migrations), exe
 ```
 yarn add axios
 ```
+
+## Dia 4: Mobile
+
+É necessário que o Expo Client esteja instalado no aparelho celular ou que tenha um emulador instalado.
+
+- O emulador precisa de uma máquina mais parruda, com no mínimo 8GB de memória RAM e um processador core-i3 mais recente ou core-i5 mais antigo.
+
+Verificar se o expo-cli deve ser atualizado.
+
+> Para atualizar, o faça pelo Windows PowerShell. Mas o projeto deve ser criado pelo Ubuntu.
+
+Criar o projeto mobile:
+
+`expo init mobile`
+
+> Selecionar template \*blank (TypeScript)
+
+Entrar no diretório do projeto: `cd mobile`
+
+Abrir o expo: `yarn start`
+
+Conectar o celular na mesma rede wi-fi do computador, abrir o Expo no celular e ler o QRCode para baixar a aplicação. A aplicação será atualizada a cada alteração nos arquivos.
+
+> O comando `expo init` inicia o projeto como um projeto _git_. Se for colocar dentro de um _monorepo_, será necessário apagar o diretório `./git` de dentro do diretório `mobile`.
+
+### Instalar fontes
+
+Usando [Expo Google fonts](https://github.com/expo/google-fonts). Por exemplo, para instalar o pacote que carrega as fontes e também as fontes _archivo_ e _poppins_:
+
+`expo install expo-font @expo-google-fonts/archivo @expo-google-fonts/poppins`
+
+### Particularidades do ReactNative
+
+- Cada estilo no seu elemento. Não há herança de estilos CSS.
+
+  > A exceção a essa regra é a tag Text.
+  > Pode haver uma Text dentro da outra, então aquela herda desta.
+
+- Não pode usar hifen nos atributos, tem que usar camelCase, e os valores entre aspas.
+- Não tem grid, não tem gradiente, não lê imagens em svg.
+- No mobile há conceito de densidade de pixel, pois depende do dispositivo. Por isso há mais de um arquivo para a mesma imagem. É necessário lembrar de exportar 3 arquivos de diferentes tamanos para a mesma imagem.
+- Todos os elementos vem com display:flex por padrão.
+- No ReactNative o flexDirection é column por padrão.
+
+### Criar páginas
+
+- landing
+- dar aulas
+- estudar
+- lista de professores
+- favoritos
+
+### Navegação
+
+De acordo com https://reactnavigation.org/docs/getting-started/
+
+```
+yarn add @react-navigation/native
+```
+
+No [expo](https://reactnavigation.org/docs/getting-started/#installing-dependencies-into-an-expo-managed-project):
+
+```
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+```
+
+Tipos:
+
+- stack: em pilha, quando há um botão de voltar
+- abas
+- drawer: menu hamburguer
+
+Instalar stack e abas:
+
+```
+yarn add @react-navigation/stack
+
+yarn add @react-navigation/bottom-tabs
+```
+
+## Dia 5: Finalizando mobile, conectado ao back-end
+
+- lista de professores
+- lista de professores favoritos
+- whatsapp deep linking
+
+### Conectar com o back-end
+
+- cliente REST (axios)
+
+```
+yarn add axios
+```
+
+### Storage do dispositivo
+
+- expo async storage para controle dos favoritos
+
+```
+expo install @react-native-community/async-storage
+```
+
+- carga dos favoritos cada vez que a tela de favoritos é aberta
+
+> Como o useEffect é chamado somente quando a tela é carregada pela primeira vez,
+> o tab navigator não carrega a tela novamente.
+> Então para carregar a lista de novo, deve ser usado o useFocusEffect, mas
+> mas com cuidado para não causar loop, usando o React.useCallback.
