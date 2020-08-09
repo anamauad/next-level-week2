@@ -283,3 +283,5 @@ Páginas de estudo:
 ```
 yarn add axios
 ```
+
+- whatsapp deep linking
