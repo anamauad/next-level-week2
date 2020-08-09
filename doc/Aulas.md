@@ -269,9 +269,17 @@ yarn add @react-navigation/stack
 yarn add @react-navigation/bottom-tabs
 ```
 
-## Dia 4: Finalizando mobile, conectado ao back-end
+## Dia 5: Finalizando mobile, conectado ao back-end
 
 Páginas de estudo:
 
 - lista de professores
 - lista de professores favoritos
+
+### Conectar com o back-end
+
+- cliente REST (axios)
+
+```
+yarn add axios
+```
