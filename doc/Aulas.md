@@ -285,3 +285,9 @@ yarn add axios
 ```
 
 - whatsapp deep linking
+
+- expo async storage para controle dos favoritos
+
+```
+expo install @react-native-community/async-storage
+```
