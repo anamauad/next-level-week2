@@ -157,15 +157,17 @@ Após criar os arquivos para criar as tabelas na base de dados (migrations), exe
 
 [API](../server/API.md)
 
-## Dia 2: Finalizando o front-end
+## Dia 3: Finalizando o front-end
 
 ### Finalizar páginas
 
 - Ensinar => cadastro de professor: teacher form
+- Estudar => lista de professores: teacher list
 - Componentes:
   - Input
   - TextArea
   - Select
+- Link para whatsapp
 
 ### Conectar com o back-end
 
