@@ -10,11 +10,12 @@ Evolução dos dias:
 
 ## Dia 1: Front-end
 
-Criar projeto _Proffy_ usando o modelo **mobile first**, em que é construído primeiramente para acesso através de celulares, para então adequar a visualização quando acessado por dispositivos com telas maiores, como por exemplo computadores e tablets.
+Criar o projeto front-end _Proffy_ usando o modelo **mobile first**, em que é construído primeiramente para acesso através de celulares, para então adequar a visualização quando acessado por dispositivos com telas maiores, como por exemplo computadores e tablets.
 
 ### Ambiente de desenvolvimento
 
 - SO: Windows 10 + Ubuntu App
+  - todos os comandos yarn e install devem ser feitos pelo Ubuntu
 - IDE: Visual Studio Code
 - layout: figma.com
   - arquivos [Proffy_Mobile](Proffy_Mobile.fig) e [Proffy_Web](Proffy_Web.fig)
@@ -178,3 +179,23 @@ Após criar os arquivos para criar as tabelas na base de dados (migrations), exe
 ```
 yarn add axios
 ```
+
+## Dia 4: mobile
+
+É necessário que o Expo Client esteja instalado no aparelho celular ou que tenha um emulador instalado.
+
+- O emulador precisa de uma máquina mais parruda, com no mínimo 8GB de memória RAM e um processador core-i3 mais recente ou core-i5 mais antigo.
+
+Verificar se o expo-cli deve ser atualizado.
+
+> Para atualizar, o faça pelo Windows PowerShell. Mas o projeto deve ser criado pelo Ubuntu.
+
+Criar o projeto mobile:
+
+`expo init mobile`
+
+> Selecionar template \*blank (TypeScript)
+
+Entrar no diretório do projeto: `cd mobile`
+
+Abrir o expo: `yarn start`
