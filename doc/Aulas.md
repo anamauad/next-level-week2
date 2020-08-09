@@ -233,6 +233,9 @@ Usando [Expo Google fonts](https://github.com/expo/google-fonts). Por exemplo, p
 
 - landing
 - dar aulas
+- estudar
+- lista de professores
+- favoritos
 
 ### Navegação
 
