@@ -6,9 +6,18 @@ import styles from "./styles";
 
 import backIco from "../../assets/images/icons/back.png";
 import logoImg from "../../assets/images/logo.png";
+import { useNavigation } from "@react-navigation/native";
 
-function PageHeader() {
-  function handleGoBack() {}
+interface PageHeaderProps {
+  title: string;
+}
+
+const PageHeader: React.FC<PageHeaderProps> = ({ title }) => {
+  const { navigate } = useNavigation();
+
+  function handleGoBack() {
+    navigate("Landing");
+  }
 
   return (
     <View style={styles.container}>
@@ -20,9 +29,9 @@ function PageHeader() {
         <Image source={logoImg} resizeMode="contain"></Image>
       </View>
 
-      <Text style={styles.title}>Proffys disponíveis</Text>
+      <Text style={styles.title}>{title}</Text>
     </View>
   );
-}
+};
 
 export default PageHeader;

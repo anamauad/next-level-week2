@@ -8,7 +8,7 @@ import PageHeader from "../../components/PageHeader";
 function TeacherList() {
   return (
     <View style={styles.container}>
-      <PageHeader />
+      <PageHeader title="Proffys disponíveis" />
     </View>
   );
 }
