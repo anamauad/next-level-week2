@@ -69,34 +69,31 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
           <Text style={styles.name}>{teacher.name}</Text>
           <Text style={styles.subject}>{teacher.subject}</Text>
         </View>
-        <Text style={styles.bio}>{teacher.bio}</Text>
-        <View style={styles.footer}>
-          <Text style={styles.price}>
-            Preço/hora {"   "}
-            <Text style={styles.priceValue}>R$ {teacher.cost}</Text>
-          </Text>
-          <View style={styles.buttonsContainer}>
-            <RectButton
-              onPress={handleToggleFavorite}
-              style={[
-                styles.favoriteButton,
-                isFavorited ? styles.favorited : {},
-              ]}
-            >
-              {isFavorited ? (
-                <Image source={unfavoriteIcon} />
-              ) : (
-                <Image source={heartOutlineIcon} />
-              )}
-            </RectButton>
-            <RectButton
-              onPress={handleLinkToWhatsapp}
-              style={styles.contactButton}
-            >
-              <Image source={whatsappIcon} />
-              <Text style={styles.contactButtonText}>Entrar em contato</Text>
-            </RectButton>
-          </View>
+      </View>
+      <Text style={styles.bio}>{teacher.bio}</Text>
+      <View style={styles.footer}>
+        <Text style={styles.price}>
+          Preço/hora {"   "}
+          <Text style={styles.priceValue}>R$ {teacher.cost}</Text>
+        </Text>
+        <View style={styles.buttonsContainer}>
+          <RectButton
+            onPress={handleToggleFavorite}
+            style={[styles.favoriteButton, isFavorited ? styles.favorited : {}]}
+          >
+            {isFavorited ? (
+              <Image source={unfavoriteIcon} />
+            ) : (
+              <Image source={heartOutlineIcon} />
+            )}
+          </RectButton>
+          <RectButton
+            onPress={handleLinkToWhatsapp}
+            style={styles.contactButton}
+          >
+            <Image source={whatsappIcon} />
+            <Text style={styles.contactButtonText}>Entrar em contato</Text>
+          </RectButton>
         </View>
       </View>
     </View>
