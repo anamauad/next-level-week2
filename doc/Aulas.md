@@ -199,3 +199,24 @@ Criar o projeto mobile:
 Entrar no diretório do projeto: `cd mobile`
 
 Abrir o expo: `yarn start`
+
+Conectar o celular na mesma rede wi-fi do computador, abrir o Expo no celular e ler o QRCode para baixar a aplicação. A aplicação será atualizada a cada alteração nos arquivos.
+
+### Instalar fontes
+
+Usando [Expo Google fonts](https://github.com/expo/google-fonts). Por exemplo, para instalar o pacote que carrega as fontes e também as fontes _archivo_ e _poppins_:
+
+`expo install expo-font @expo-google-fonts/archivo @expo-google-fonts/poppins`
+
+### Particularidades do ReactNative
+
+- Cada estilo no seu elemento. Não há herança de estilos CSS.
+
+  > A exceção a essa regra é a tag Text.
+  > Pode haver uma Text dentro da outra, então aquela herda desta.
+
+- Não pode usar hifen nos atributos, tem que usar camelCase, e os valores entre aspas.
+- Não tem grid, não tem gradiente, não lê imagens em svg.
+- No mobile há conceito de densidade de pixel, pois depende do dispositivo. Por isso há mais de um arquivo para a mesma imagem. É necessário lembrar de exportar 3 arquivos de diferentes tamanos para a mesma imagem.
+- Todos os elementos vem com display:flex por padrão.
+- No ReactNative o flexDirection é column por padrão.
