@@ -23,11 +23,11 @@ function Favorites() {
   // o tab navigator não carrega a tela novamente.
   // Então para carregar a lista de novo, deve ser usado o useFocusEffect, mas
   // mas com cuidado para não causar loop, usando o React.useCallback.
-  useFocusEffect(() => {
+  useFocusEffect(
     React.useCallback(() => {
       loadFavorites();
-    }, []);
-  });
+    }, [])
+  );
 
   return (
     <View style={styles.container}>
