@@ -271,10 +271,9 @@ yarn add @react-navigation/bottom-tabs
 
 ## Dia 5: Finalizando mobile, conectado ao back-end
 
-Páginas de estudo:
-
 - lista de professores
 - lista de professores favoritos
+- whatsapp deep linking
 
 ### Conectar com o back-end
 
@@ -284,7 +283,7 @@ Páginas de estudo:
 yarn add axios
 ```
 
-- whatsapp deep linking
+### Storage do dispositivo
 
 - expo async storage para controle dos favoritos
 
