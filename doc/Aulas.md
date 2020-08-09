@@ -109,13 +109,21 @@ Criar o projeto do servidor com:
 mkdir server
 cd server
 yarn init -y
+
 yarn add typescript -D
+
 yarn tsc --init
+
 yarn add ts-node-dev -D
+
 yarn add express
+
 yarn add @types/express -D
+
 yarn add knex sqlite3
+
 yarn add cors
+
 yarn add @types/cors -D
 ```
 
@@ -220,3 +228,36 @@ Usando [Expo Google fonts](https://github.com/expo/google-fonts). Por exemplo, p
 - No mobile há conceito de densidade de pixel, pois depende do dispositivo. Por isso há mais de um arquivo para a mesma imagem. É necessário lembrar de exportar 3 arquivos de diferentes tamanos para a mesma imagem.
 - Todos os elementos vem com display:flex por padrão.
 - No ReactNative o flexDirection é column por padrão.
+
+### Criar páginas
+
+- landing
+- dar aulas
+
+### Navegação
+
+De acordo com https://reactnavigation.org/docs/getting-started/
+
+```
+yarn add @react-navigation/native
+```
+
+No [expo](https://reactnavigation.org/docs/getting-started/#installing-dependencies-into-an-expo-managed-project):
+
+```
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+```
+
+Tipos:
+
+- stack: em pilha, quando há um botão de voltar
+- abas
+- drawer: menu hamburguer
+
+Instalar stack e abas:
+
+```
+yarn add @react-navigation/stack
+
+yarn add @react-navigation/bottom-tabs
+```
