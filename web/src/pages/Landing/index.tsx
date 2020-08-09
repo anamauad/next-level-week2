@@ -13,9 +13,15 @@ function Landing() {
   const [totalConnections, setTotalConnections] = useState(0);
 
   useEffect(() => {
+    let mounted = true;
     api.get("connections").then((response) => {
-      setTotalConnections(response.data.total || 0);
+      if (mounted) {
+        setTotalConnections(response.data.total || 0);
+      }
     });
+    return function cleanup() {
+      mounted = false;
+    };
   }, []);
 
   return (
