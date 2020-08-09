@@ -7,6 +7,8 @@ Evolução dos dias:
 1. Desenvolvimento do front-end
 1. Desenvolvimento do back-end
 1. Finalizando o front-end, conectado ao back-end
+1. Desenvolvimento do mobile
+1. Finalizadno o mobile, conectado ao back-end
 
 ## Dia 1: Front-end
 
@@ -188,7 +190,7 @@ Após criar os arquivos para criar as tabelas na base de dados (migrations), exe
 yarn add axios
 ```
 
-## Dia 4: mobile
+## Dia 4: Mobile
 
 É necessário que o Expo Client esteja instalado no aparelho celular ou que tenha um emulador instalado.
 
@@ -209,6 +211,8 @@ Entrar no diretório do projeto: `cd mobile`
 Abrir o expo: `yarn start`
 
 Conectar o celular na mesma rede wi-fi do computador, abrir o Expo no celular e ler o QRCode para baixar a aplicação. A aplicação será atualizada a cada alteração nos arquivos.
+
+> O comando `expo init` inicia o projeto como um projeto _git_. Se for colocar dentro de um _monorepo_, será necessário apagar o diretório `./git` de dentro do diretório `mobile`.
 
 ### Instalar fontes
 
@@ -264,3 +268,10 @@ yarn add @react-navigation/stack
 
 yarn add @react-navigation/bottom-tabs
 ```
+
+## Dia 4: Finalizando mobile, conectado ao back-end
+
+Páginas de estudo:
+
+- lista de professores
+- lista de professores favoritos
